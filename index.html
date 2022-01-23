@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Library</title>
+        <link rel="stylesheet" href="styles.css">
+        <script defer src="library.js"></script>
+    </head>
+    <body>
+        <div class="header">Library</div>
+        <div class="main">
+            <button class="addBook">Add Book</button>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read</th>
+                        <th class='deleteBtnColumn'></th>
+                    </tr>
+                </thead>
+                <tbody id="bookList"></tbody>
+                <div class="popUpBackground">
+                    <div class="popUp">
+                        <div>
+                            <div class="close">+</div>
+                            Add a Book
+                        </div>
+                        <form>
+                            <div>
+                                <label>Title</label>
+                                <input type="text" name="title" id="title" required>
+                            </div>
+                            <div>
+                                <label>Author</label>
+                                <input type="text" name="author" id="author" required>
+                            </div>
+                            <div>
+                                <label>Pages</label>
+                                <input type="number" name="pages" id="pages" required>
+                            </div>
+                            <div>
+                                <label>Read</label>
+                                <select name="read" id="read">
+                                    <option value="Read">Read</option>
+                                    <option value="Not Read">Not Read</option>
+                                </select>
+                            </div>
+                            <button>Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </table>
+        </div>
+    </body>
+</html>
