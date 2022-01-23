@@ -26,14 +26,14 @@ function addBookToLibrary(title, author, pages, read){
 const bookList = document.querySelector('#bookList');
 function displayBooks(){
     let bookData = '';
-    for (let book of myLibrary){
+    for (let i = 0; i < myLibrary.length; i++){
         bookData += 
         `<tr>
-            <td>${book.title}</td>
-            <td>${book.author}</td>
-            <td>${book.pages}</td>
-            <td><button data-read=${book.title} class='readStatus'>${book.read}</button></td>
-            <td><button data-delete=${book.title} class='deleteButton'>Delete</button></td>
+            <td>${myLibrary[i].title}</td>
+            <td>${myLibrary[i].author}</td>
+            <td>${myLibrary[i].pages}</td>
+            <td><button data-read=${i} class='readStatus'>${myLibrary[i].read}</button></td>
+            <td><button data-delete=${i} class='deleteButton'>Delete</button></td>
         </tr>`;
     }
     bookList.innerHTML = bookData;
@@ -48,8 +48,9 @@ function onReadStatus(e){
         return;
     }
     // iterate through myLibrary and change the read status of the index with the readStatus data attribute
+    // the data attribute equals the item's index in the myLibrary array
     for (let i = 0; i < myLibrary.length; i++){
-        if (myLibrary[i].title === e.target.dataset.read){
+        if (i == e.target.dataset.read){
             if (myLibrary[i].read === "Read"){
                 myLibrary[i].read = "Not Read";
             } else if (myLibrary[i].read === "Not Read"){
@@ -69,8 +70,9 @@ function onDeleteRow(e){
         return;
     }
     // iterate through each index of the myLibrary array and remove the index with the delete button's data attribute
+    // the data attribute equals the item's index in the myLibrary array
     for (let i = 0; i < myLibrary.length; i++){
-        if (myLibrary[i].title === e.target.dataset.delete){
+        if (i == e.target.dataset.delete){
             myLibrary.splice(i, 1);
         }
     }
