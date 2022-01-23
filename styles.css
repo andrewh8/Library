@@ -44,6 +44,7 @@ table {
     overflow: hidden;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 50px;
 }
 
 .deleteBtnColumn {
