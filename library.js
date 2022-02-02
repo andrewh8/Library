@@ -1,10 +1,23 @@
-//
+
 // library array for holding book objects
 let myLibrary = [];
 
+// changing constructor into a class
+class Book {
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    info() {
+        return `${title} by ${author}, ${pages} pages, ${read}}`;
+    }
+}
 
 // constructor function for creating objects with book information
-function Book(title, author, pages, read){
+/*function Book(title, author, pages, read){
     this.title = title
     this.author = author
     this.pages = pages
@@ -12,7 +25,7 @@ function Book(title, author, pages, read){
     this.info = function(){
         return `${title} by ${author},${pages} pages, ${read}`
     }
-}
+}*/
 
 
 // function for passing user input into the object constructor and then adding to the library array
